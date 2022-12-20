@@ -1,0 +1,102 @@
+<h2>Consumer List</h2>
+
+<div class="container">
+     <div class="row">
+          <div class="search-consumer">
+               <input type="text" >
+          </div>
+     </div>
+</div>
+
+<table class="table table-striped" >
+          <thead>
+                    <tr>
+                           <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date Added</th>
+        <th>Address Id </th>
+        <th>Area</th>
+        <th>City </th>
+                    </tr>
+          </thead>
+         <tbody>
+          <tr  *ngFor = "let consumer of  consumers  " >
+                     <td> {{ consumer.id }} </td>
+                  <td> {{ consumer.firstName }} </td>
+                   <td> {{ consumer.lastName }} </td>
+                   <td> {{ consumer.addedOn }} </td>
+                    <td> {{ consumer.address?.id }} </td>
+                    <td>{{ consumer.address?.area }}</td>
+                    <td>{{ consumer.address?.city }}</td>
+          </tr>
+         </tbody> 
+</table>
+
+<!-- <body>
+ 
+ <div class="card card p-5" style="width: 100%">
+  <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Search Consumer">
+  <table  id="myTable" class="table table-bordered table-striped data-table1" style="min-width: 100%"  data-filter-control="true" data-show-search-clear-button="true" >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date Added</th>
+        <th>Address Id </th>
+        <th>Area</th>
+        <th>City </th>
+       <th data-type="date" data-format="YYYY/MM/DD">Date Added</th> 
+      
+      </tr>
+    </thead>
+    <tbody>
+       <tr  *ngFor = "let consumer of  consumers  " >
+                 <td> {{ consumer.id }} </td>
+                  <td> {{ consumer.firstName }} </td>
+                   <td> {{ consumer.lastName }} </td>
+                   <td> {{ consumer.addedOn }} </td>
+                    <td> {{ consumer.address?.id }} </td>
+                    <td>{{ consumer.address?.area }}</td>
+                    <td>{{ consumer.address?.city }}</td>
+                   
+          </tr>
+        </tbody>
+  </table>
+</div>
+
+
+<div>
+  Select : consumer id
+  <select name="" id="">
+    <option  *ngFor = "let consumer of  consumers  ">{{ consumer.id }}</option>
+  </select>
+</div>
+
+  <script type="application/javascript">
+        function tableSearch() {
+            let input, filter, table, tr, td, txtValue;
+
+            //Intialising Variables
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1] ;
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+
+        }
+    </script>
+
+    </body> --> 

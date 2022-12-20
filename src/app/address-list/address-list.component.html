@@ -1,0 +1,27 @@
+<h2>Consumer List</h2>
+
+<div class="container">
+     <div class="row">
+          <div class="search-consumer">
+               <input type="text" >
+          </div>
+     </div>
+</div>
+
+<table class="table table-striped" >
+          <thead>
+                    <tr>
+                           <th>Id</th>
+        <th>Area</th>
+        <th>City</th>
+        
+                    </tr>
+          </thead>
+         <tbody>
+          <tr  *ngFor = "let a of  addresses  " >
+                     <td> {{ a.id }} </td>
+                    <td>{{ a.area }}</td>
+                    <td>{{ a.city }}</td>
+          </tr>
+         </tbody> 
+</table>
