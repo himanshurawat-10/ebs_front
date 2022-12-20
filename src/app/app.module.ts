@@ -7,8 +7,9 @@ import { ConsumerListComponent } from './consumer-list/consumer-list.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { FormsModule } from '@angular/forms';
 import { RegisterConsumerComponent } from './register-consumer/register-consumer.component';
-import { UpdateAddressComponent } from './update-address/update-address.component';
+
 import { AddressListComponent } from './address-list/address-list.component';
+import { UpdateAddressComponent } from './update-address/update-address.component';
 
 
 @NgModule({
@@ -16,8 +17,8 @@ import { AddressListComponent } from './address-list/address-list.component';
     AppComponent,
     ConsumerListComponent,
     RegisterConsumerComponent,
-    UpdateAddressComponent,
     AddressListComponent,
+    UpdateAddressComponent,
   ],
   imports: [
     BrowserModule,

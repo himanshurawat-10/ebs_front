@@ -6,11 +6,12 @@ import { ConsumerListComponent } from './consumer-list/consumer-list.component';
 import { RegisterConsumerComponent } from './register-consumer/register-consumer.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
 
+
 const routes: Routes = [
    { path : 'consumers', component : ConsumerListComponent },
     { path : 'addresses', component : AddressListComponent },
     { path : 'register-consumer', component : RegisterConsumerComponent },
-    { path : 'updae-address', component : UpdateAddressComponent },
+   { path : 'update-address/:id', component : UpdateAddressComponent },
    { path : ' ', redirectTo  : 'consumers' , pathMatch : 'full' }
 ];
 

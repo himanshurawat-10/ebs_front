@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Address } from '../address';
 import { AddressService } from '../address.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-address-list',
@@ -12,7 +12,8 @@ export class AddressListComponent implements OnInit{
 
       addresses ?: Address[] ;
 
-      constructor ( private addressService : AddressService){
+
+      constructor ( private addressService : AddressService , private router : Router){
 
       }
 
@@ -27,6 +28,10 @@ export class AddressListComponent implements OnInit{
     }
       )
   }
+
+       updateAddress(id ?: number){
+              this.router.navigate(['update-address' , id ]) ;
+       }
 
 
   }

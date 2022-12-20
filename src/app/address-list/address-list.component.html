@@ -14,7 +14,7 @@
                            <th>Id</th>
         <th>Area</th>
         <th>City</th>
-        
+        <th>Actions </th>
                     </tr>
           </thead>
          <tbody>
@@ -22,6 +22,9 @@
                      <td> {{ a.id }} </td>
                     <td>{{ a.area }}</td>
                     <td>{{ a.city }}</td>
+                    <td>
+                              <button (click)="updateAddress(a.id)" class = "btn btn-info"  >Update</button>
+                    </td>
           </tr>
          </tbody> 
 </table>

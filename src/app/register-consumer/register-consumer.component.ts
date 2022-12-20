@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { RegisterConsumer } from '../registerConsumer';
 import { ConsumerService } from '../consumer.service';
 import { Router } from '@angular/router';
+import { Address } from '../address';
+import { AddressService } from '../address.service';
 
 @Component({
   selector: 'app-register-consumer',
@@ -10,30 +12,32 @@ import { Router } from '@angular/router';
 })
 export class RegisterConsumerComponent {
          
-        registerConsumer : RegisterConsumer =  new RegisterConsumer() ;
-        constructor( private  consumerService : ConsumerService ,
-        private router : Router ){}
+       a : Address = new Address() ;
+
+       constructor(private addressService : AddressService ,
+         private router : Router
+       ){}
 
         ngOnInit() : void{
 
         }
 
-        saveConsumer() {
-          this.consumerService.registerConsumer(this.registerConsumer).subscribe(
-            data =>{
-              console.log(data);
-            } ,
-            error => console.log(error)  ) ;
-        }
-
-        
-          goToConsumerList(){
-                      this.router.navigate(['/consumers']) ;
-          }
-
+     saveAddress(){
+      this.addressService.addAddress(this.a).subscribe(data => {
+        console.log(data)
+        this.goToAddressList() ;
+      },
+        error => console.log(error)
+      )
+     }
+     
+      goToAddressList(){
+        this.router.navigate(['/addresses'])
+      }
 
         onSubmit(){
-
+               console.log(this.a) ;
+               this.saveAddress() ;
         }
          
 
